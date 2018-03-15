@@ -397,7 +397,8 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
                                   (yas-minor-mode t)
                                   (set-fill-column 80)
                                   (turn-on-auto-fill)
-                                  (flyspell-mode))))
+                                  ;;(flyspell-mode)
+                                  )))
 
 (use-package php-extras :ensure t :defer t)
 (use-package sublime-themes :ensure t)
@@ -697,8 +698,8 @@ The IGNORED argument is... Ignored."
                                   (define-key twittering-mode-map (kbd "C-c C-a") 'twittering-favorite)
                                   (define-key twittering-mode-map (kbd ",b") 'helm-mini)))
 
-(add-hook 'twittering-edit-mode-hook (lambda ()
-                                       (flyspell-mode)))
+;;(add-hook 'twittering-edit-mode-hook (lambda ()
+;;                                       (flyspell-mode)))
 
 ;;; Javascript mode:
 (add-hook 'javascript-mode-hook (lambda ()
@@ -756,6 +757,18 @@ is the buffer location at which the function was found."
 (setq org-directory "~/org")
 (setq org-default-notes-file (concat org-directory "/capture.org"))
 (define-key global-map "\C-cc" 'org-capture)
+;;(setcdr (assoc 'plain-list-item org-blank-before-new-entry) nil)
+;;(setq org-cycle-separator-lines 0)
+(setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+
+;; Org agenda
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(setq org-agenda-files (list "~/org/work.org"
+                             "~/org/school.org"
+                             "~/org/home.org"))
 
 ;; Babel Execute
 (org-babel-do-load-languages
@@ -768,6 +781,9 @@ is the buffer location at which the function was found."
                              (emacs-lisp . t)
                              (sql . t)
                              ))
+
+;; Aspell
+(setq-default ispell-program-name "aspell")
 
 ;; Fiplr setup
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
@@ -791,6 +807,16 @@ is the buffer location at which the function was found."
 ;; Python
 (package-initialize)
 (elpy-enable)
+
+;; Cmake
+; Add cmake listfile names to the mode list.
+(setq auto-mode-alist
+	  (append
+	   '(("CMakeLists\\.txt\\'" . cmake-mode))
+	   '(("\\.cmake\\'" . cmake-mode))
+	   auto-mode-alist))
+
+(autoload 'cmake-mode "~/.emacs.d/cmake-mode.el" t)
 
 (provide 'init)
 ;;; init.el ends here
