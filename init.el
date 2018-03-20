@@ -754,7 +754,7 @@ is the buffer location at which the function was found."
 
 ;; Org-mode setup
 (require 'org)
-(setq org-directory "~/org")
+(setq org-directory "~/WorkDocs/org")
 (setq org-default-notes-file (concat org-directory "/capture.org"))
 (define-key global-map "\C-cc" 'org-capture)
 ;;(setcdr (assoc 'plain-list-item org-blank-before-new-entry) nil)
@@ -766,9 +766,9 @@ is the buffer location at which the function was found."
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-(setq org-agenda-files (list "~/org/work.org"
-                             "~/org/school.org"
-                             "~/org/home.org"))
+(setq org-agenda-files (list "~/WorkDocs/org/work.org"
+                             "~/WorkDocs/org/school.org"
+                             "~/WorkDocs/org/home.org"))
 
 ;; Babel Execute
 (org-babel-do-load-languages
@@ -803,6 +803,9 @@ is the buffer location at which the function was found."
 
 ;; Conda Keybindings
 (global-set-key (kbd "C-c z") 'pyvenv-workon)
+
+;; Start a new terminal in emacs
+(global-set-key (kbd "C-c C-t") 'ansi-term)
 
 ;; Python
 (package-initialize)

@@ -14,6 +14,7 @@
  '(magit-commit-arguments nil)
  '(markdown-preview-custom-template "/Users/abieber/.emacs.d/markdown-preview-template.html")
  '(org-agenda-files nil)
+ '(org-export-backends (quote (ascii beamer html icalendar latex md)))
  '(org-hide-emphasis-markers t)
  '(org-modules
    (quote

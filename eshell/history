@@ -1,0 +1,10 @@
+ls
+cd ..
+ls
+cd ..
+ls
+cd arnold-workspace/
+source activate arnold
+cd ..
+ls
+source activate arnold
