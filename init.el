@@ -811,6 +811,36 @@ is the buffer location at which the function was found."
 (package-initialize)
 (elpy-enable)
 
+;; Default Evil mode (set to emacs)
+(setq evil-default-state 'emacs)
+
+;; Powerline Evil
+;(require 'powerline)
+;(require 'powerline-evil)
+;;(add-hook 'desktop-after-read-hook 'powerline-reset)
+;(powerline-evil-center-color-theme)
+;
+;(setq powerline-arrow-shape 'curve)   ;; the default
+
+;(defvar powerline-color1)
+;(defvar powerline-color2)
+
+;(setq powerline-color1 "grey22")
+;(setq powerline-color2 "grey40")
+;;
+(require 'powerline-evil)
+(setq powerline-arrow-shape 'arrow)
+(powerline-center-evil-theme)
+
+(display-time-mode t)
+
+(setq powerline-color1 "grey22")
+(setq powerline-color2 "grey40")
+
+;(require 'spaceline-config)
+;(spaceline-spacemacs-theme)
+;(spaceline-toggle-python-pyvenv-on)
+
 ;; Cmake
 ; Add cmake listfile names to the mode list.
 (setq auto-mode-alist
