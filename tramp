@@ -1,0 +1,12 @@
+;; -*- emacs-lisp -*- <18/03/26 15:44:01 /Users/nsalerni/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["sudo" "root" "192.168.4.38" nil nil]
+  nil)
+ (["ssh" nil "pi" nil nil]
+  nil)
+ (["ssh" nil "nsalerni" nil nil]
+  nil)
+ (["ssh" "nsalerni" "dev-dsk-nsalerni-2a-2776efe8.us-west-2.amazon.com" nil nil]
+  nil))

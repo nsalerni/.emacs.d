@@ -841,6 +841,15 @@ is the buffer location at which the function was found."
 ;(spaceline-spacemacs-theme)
 ;(spaceline-toggle-python-pyvenv-on)
 
+;; Confluence exporter for org-mode
+(require 'ox-confluence)
+
+;; Truncate lines on the fly
+(define-key org-mode-map "\M-q" 'toggle-truncate-lines)
+
+;; Do not ask for confirmation when running code block in org-mode
+(setq org-confirm-babel-evaluate nil)
+
 ;; Cmake
 ; Add cmake listfile names to the mode list.
 (setq auto-mode-alist
