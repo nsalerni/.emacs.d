@@ -896,7 +896,13 @@ is the buffer location at which the function was found."
 (setq mouse-wheel-progressive-speed nil)
 
 
-
+;; C-c back to C-x in term mode
+(add-hook 'term-mode-hook
+   (lambda ()
+     ;; C-x is the prefix command, rather than C-c
+     (term-set-escape-char ?\C-x)
+     (define-key term-raw-map "\M-y" 'yank-pop)
+     (define-key term-raw-map "\M-w" 'kill-ring-save)))
 
 ;(require 'spaceline-config)
 ;(spaceline-spacemacs-theme)
