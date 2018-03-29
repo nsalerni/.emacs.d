@@ -917,6 +917,10 @@ is the buffer location at which the function was found."
 ;; Do not ask for confirmation when running code block in org-mode
 (setq org-confirm-babel-evaluate nil)
 
+
+;; visual regex
+(require 'visual-regexp)
+
 ;; Cmake
 ; Add cmake listfile names to the mode list.
 (setq auto-mode-alist
