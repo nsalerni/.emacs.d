@@ -920,6 +920,12 @@ is the buffer location at which the function was found."
 
 ;; visual regex
 (require 'visual-regexp)
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+
+;; Turn off the visual bell
+(setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;; Cmake
 ; Add cmake listfile names to the mode list.
